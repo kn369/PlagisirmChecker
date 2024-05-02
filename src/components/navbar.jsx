@@ -6,9 +6,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function navbar() {
     return (
-        <Navbar expand="lg" style={{background: '#00000067', backdropFilter: 'blur(5px)'}}>
+        <Navbar expand="lg" style={{background: '#00000067', backdropFilter: 'blur(5px)', fontSize: '16pt', height: '8vh'}}>
             <Container>
-                <Navbar.Brand eventkey="link-1" href="home">Title</Navbar.Brand>
+                <Navbar.Brand eventkey="link-1" href="home" style={{fontSize: '18pt'}}>PlagCheck</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
