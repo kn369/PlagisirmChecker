@@ -8,7 +8,8 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col";
 import Ds from "../page/index";
 import Editor from "quill/core/editor";
-
+import Accordion from "react-bootstrap/Accordion";
+import "../page/tool.css"
 
 function Tool() {
     const [input, setInput] = useState("");
@@ -51,9 +52,9 @@ function Tool() {
     return (
         <Container fluid style={{ padding: '0', margin: '0', background: 'white', height: '100vh' }}>
             <Navbar />
-            <Container fluid style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '62vh' }}>
+            <Container fluid style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '62vh', paddingTop: '2%' }}>
                 <Header />
-                <Container>
+                <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     <Row>
                         <Col lg={true} style={{ padding: '1%' }}><Quill value={input} setValue={setInput} placeholder={"Submit text"} /></Col>{" "}
                         <Col lg={true} style={{ padding: '1%' }}><Quill value={compare} setValue={setCompare} placeholder={"Reference text"} /></Col>
@@ -66,6 +67,25 @@ function Tool() {
                         Common Parts: <br></br> {common}
                     </Container>
                     <hr />
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    <Accordion>
+                        <Accordion.Item eventKey="0" >
+                            <Accordion.Header>Can I compare text in different languages?</Accordion.Header>
+                            <Accordion.Body>Unfortunately, currently PlagCheck doesn't support multiple languages. You can compare text in only English.</Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="1">
+                            <Accordion.Header>What is a plagiarism checker?</Accordion.Header>
+                            <Accordion.Body>A plagiarism checker can identify instances of plagiarism in another text. You can compare two different texts to find if portions of the text have lifted from one another.</Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="2">
+                            <Accordion.Header>Do I need to install this software?</Accordion.Header>
+                            <Accordion.Body>No. PlagCheck provides this tool as an online service. In order to use, you need modern browser (like Chrome). Any operating system (like Mac, Windows, and Linux) is suported! So, in order to use the tool you don't need to download anything!</Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="3">
+                            <Accordion.Header>What is the comparison tool processing flow?</Accordion.Header>
+                            <Accordion.Body>You need to submit 2 text. The system will look for longest common subsequence to generate comparison report. This report is also called Cross Comparison or Side by Side Comparison</Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
                 </Container>
             </Container>
         </Container>
