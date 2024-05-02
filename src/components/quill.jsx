@@ -4,9 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 import { Container } from 'react-bootstrap';
 import "../components/quill.css"
 
-function MyComponent (){
-    const [value, setValue] = useState('');
-    console.log(value);
+function MyComponent ({value, setValue}){
     var toolbarOptions =[['bold','italic','underline']];
     const module = {
         toolbar: toolbarOptions,
